@@ -65,3 +65,22 @@ document.querySelector("section.cta>div>h1").textContent = siteContent.cta.h1;
 document.querySelector("section.cta>div>button").textContent = siteContent.cta.button;
 
 document.getElementById("cta-img").src = siteContent.images["cta-img"];
+
+{
+  let i = 0;
+  const siteMainContent = siteContent["ana-içerik"];
+  const contentArr = [];
+
+  for (let key in siteMainContent)
+    contentArr.push(siteMainContent[key]);
+
+  const deneme = document.querySelectorAll("section.main-content .text-content");
+  deneme.forEach((element) => {
+    element.children[0].textContent = contentArr[i++];
+    element.children[1].textContent = contentArr[i++];
+  });
+}
+
+document.getElementById("middle-img").src = siteContent.images["accent-img"];
+
+

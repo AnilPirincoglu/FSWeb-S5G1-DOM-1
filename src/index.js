@@ -44,6 +44,7 @@ console.log('Proje açıldı!')
 
 /* Kodlar Buradan aşağıya */
 
+// Header
 {
   let i = 1;
   const headerAnchor = document.querySelectorAll(".container>header>nav>a");
@@ -56,31 +57,47 @@ console.log('Proje açıldı!')
 
 document.getElementById("logo-img").src = siteContent.images["logo-img"];
 
-/* {
-  const sectionDiv = document.getElementsByClassName("cta-text")[0].children;
+//Cta
+{
+  const sectionDiv = document.querySelector(".cta-text").children;
   sectionDiv[0].textContent = siteContent.cta.h1;
   sectionDiv[1].textContent = siteContent.cta.button;
-} */
-document.querySelector("section.cta>div>h1").textContent = siteContent.cta.h1;
-document.querySelector("section.cta>div>button").textContent = siteContent.cta.button;
+}
 
 document.getElementById("cta-img").src = siteContent.images["cta-img"];
 
+//Ana İçerik
 {
   let i = 0;
-  const siteMainContent = siteContent["ana-içerik"];
-  const contentArr = [];
+  const mainContentArr = [];
 
-  for (let key in siteMainContent)
-    contentArr.push(siteMainContent[key]);
+  for (let key in siteContent["ana-içerik"])
+    mainContentArr.push(siteContent["ana-içerik"][key]);
 
-  const deneme = document.querySelectorAll("section.main-content .text-content");
-  deneme.forEach((element) => {
-    element.children[0].textContent = contentArr[i++];
-    element.children[1].textContent = contentArr[i++];
+  const divTextContent = document.querySelectorAll("section.main-content .text-content");
+  divTextContent.forEach((element) => {
+    element.children[0].textContent = mainContentArr[i++];
+    element.children[1].textContent = mainContentArr[i++];
   });
 }
 
 document.getElementById("middle-img").src = siteContent.images["accent-img"];
 
+//İletişim
+{
+  const contactTags = document.querySelector("section.contact").children;
+  const siteContactArr = [];
 
+  for (let key in siteContent["iletisim"])
+    siteContactArr.push(siteContent["iletisim"][key]);
+
+  for (let i = 0; i < siteContactArr.length; i++)
+    contactTags[i].textContent = siteContactArr[i];
+}
+
+//Footer
+{
+  const footerAnchor = document.querySelector("footer>a");
+  footerAnchor.className = "bold";
+  footerAnchor.textContent = siteContent.footer.copyright;
+}

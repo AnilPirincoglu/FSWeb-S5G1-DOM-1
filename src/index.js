@@ -54,3 +54,6 @@ console.log('Proje açıldı!')
   });
 }
 
+document.getElementById("logo-img").src = siteContent.images["logo-img"];
+
+

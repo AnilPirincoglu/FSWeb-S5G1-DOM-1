@@ -56,8 +56,12 @@ console.log('Proje açıldı!')
 
 document.getElementById("logo-img").src = siteContent.images["logo-img"];
 
+/* {
+  const sectionDiv = document.getElementsByClassName("cta-text")[0].children;
+  sectionDiv[0].textContent = siteContent.cta.h1;
+  sectionDiv[1].textContent = siteContent.cta.button;
+} */
 document.querySelector("section.cta>div>h1").textContent = siteContent.cta.h1;
-
 document.querySelector("section.cta>div>button").textContent = siteContent.cta.button;
 
-document.querySelector("section.cta>img").src = siteContent.images["cta-img"];
+document.getElementById("cta-img").src = siteContent.images["cta-img"];

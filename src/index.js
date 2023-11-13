@@ -56,4 +56,8 @@ console.log('Proje açıldı!')
 
 document.getElementById("logo-img").src = siteContent.images["logo-img"];
 
+document.querySelector("section.cta>div>h1").textContent = siteContent.cta.h1;
 
+document.querySelector("section.cta>div>button").textContent = siteContent.cta.button;
+
+document.querySelector("section.cta>img").src = siteContent.images["cta-img"];

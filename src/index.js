@@ -43,3 +43,14 @@ console.log('Proje açıldı!')
 
 
 /* Kodlar Buradan aşağıya */
+
+{
+  let i = 1;
+  const headerAnchor = document.querySelectorAll(".container>header>nav>a");
+  headerAnchor.forEach((element) => {
+    element.textContent = siteContent.nav[`nav-item-${i}`];
+    element.className = "italic";
+    i++;
+  });
+}
+
